@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576110285}
+  - component: {fileID: 576110287}
   - component: {fileID: 576110286}
   m_Layer: 0
   m_Name: UDPClient
@@ -164,10 +164,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 576110283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31ed9205680e4384787a6467445ede77, type: 3}
+  m_Script: {fileID: 11500000, guid: 479a98a913bd69f4690c9c96389a370b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: -1
+  _xX: 0
+  _yY: 0
+  _zZ: 0
+  _Button: 
+  _Light: 0
+  IsPlay: 0
+  OldIndeX: -1
+  OldIndeY: -1
+  OldIndeZ: -1
+--- !u!114 &576110287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576110283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dda644e533f5e143b79b01a13341f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1470896187
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,11 +360,11 @@ MonoBehaviour:
   - '#T#B_#'
   - '#_B_T#'
   - '######'
-  wall: {fileID: 7175471491443515898, guid: 751601b6d01c2194295d3342a83a1702, type: 3}
-  player: {fileID: 1246891197747318374, guid: 435925c28000a8241ab31bbfbf41f0c4, type: 3}
+  wall: {fileID: 8444089324616599450, guid: 2214e0d6c9557d8459befb8b48d56c43, type: 3}
+  player: {fileID: 2071510095513336003, guid: 37991a6096cb55b4794179eed5f0daff, type: 3}
   box: {fileID: 4612657115126086344, guid: a9223b095fd75ff498bbec9e92c510f8, type: 3}
   target: {fileID: 1357948906845057684, guid: 25e90bdb6fd6a244280579dcb6d96d8f, type: 3}
-  ground: {fileID: 1247066562177229540, guid: 859847c92420c3d4eb769514e2959843, type: 3}
+  ground: {fileID: 30071579534194817, guid: 419a2aae950602d4fb49829aba76c340, type: 3}
   left_top_x: -5
   left_top_y: -4
 --- !u!4 &1611353704
