@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RythmGame_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Sokoban.unity
-    guid: 8d905571a62682d4bbdfce7971836a88
+    path: Assets/Scenes/Sokoban_1.unity
+    guid: 9d40b1fc6cc788e489c7e0c919e823c6
   - enabled: 1
-    path: Assets/Scenes/Sokoban_02.unity
+    path: Assets/Scenes/Result_1.unity
     guid: cc6498f2635c9ec4d9c9fb104ceec98f
   m_configObjects: {}

@@ -60,19 +60,20 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.57f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Sokoban\Script\MapCreator.cs" />
+    <Compile Include="Assets\Script_Sokoban\SceneLoader.cs" />
     <Compile Include="Assets\Instruction\Instruction.cs" />
-    <Compile Include="Assets\RythmGame_1\Script\Character.cs" />
-    <Compile Include="Assets\RythmGame_1\Script\Effect.cs" />
-    <Compile Include="Assets\RythmGame_1\Script\GameManager.cs" />
-    <Compile Include="Assets\RythmGame_1\Script\NoteObject.cs" />
-    <Compile Include="Assets\RythmGame_1\Script\ButtonController.cs" />
-    <Compile Include="Assets\RythmGame_2\Script.cs" />
-    <Compile Include="Assets\Sokoban\Script\Player.cs" />
+    <Compile Include="Assets\Script_Rythm\Character.cs" />
+    <Compile Include="Assets\Sokoban_2\Sript\MapCreator2.cs" />
+    <Compile Include="Assets\Sokoban_2\Sript\player2.cs" />
+    <Compile Include="Assets\Script_Rythm\GameManager.cs" />
+    <Compile Include="Assets\Script_Rythm\Effect.cs" />
     <Compile Include="Assets\KeyboardSimulator.cs" />
-    <Compile Include="Assets\Sokoban\Script\SceneLoader.cs" />
+    <Compile Include="Assets\Script_Sokoban\Player.cs" />
+    <Compile Include="Assets\Script_Rythm\BeatScroller.cs" />
     <Compile Include="Assets\UdpClient.cs" />
-    <Compile Include="Assets\RythmGame_1\Script\BeatScroller.cs" />
+    <Compile Include="Assets\Script_Rythm\NoteObject.cs" />
+    <Compile Include="Assets\Script_Sokoban\MapCreator.cs" />
+    <Compile Include="Assets\Script_Rythm\ButtonController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -135,6 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePress: 0
   keyTopress: 32
-  perfectAdjust: 0
+  perfectAdjust: 0.2
   hitEffect: {fileID: 5336044986902851684, guid: 6109e7057c47e6549a1df2061593fcdd, type: 3}
   perfectEffect: {fileID: 5437721271138178761, guid: b7ddad4a01919254a9d62ad781fe885f, type: 3}

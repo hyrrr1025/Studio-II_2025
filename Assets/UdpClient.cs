@@ -8,9 +8,9 @@ using System.Threading;
 using System;
 //using UnityEngine.tvOS;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
+//using UnityEditor.VersionControl;
 using Unity.VisualScripting;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 using Baracuda.Threading;
 
@@ -101,6 +101,7 @@ public class UdpClient : MonoBehaviour
                     string _Z = ReverString(message.Substring(8, 4));
                     _zZ = ToInt32(_Z);
                     OnResh(_zZ, ref OldIndeZ);
+                    // 就是这里的 _zz xx yy吧
                     //Debug.Log(string.Format("Z:十六进制={0}-十进制={1}", _Z, ToInt32(_Z)));
                     _Button = ReverString(message.Substring(12, 4));
                     //Debug.Log(string.Format("按钮:十六进制={0}-十进制={1}", _Button, Convert.ToInt32(_Button, 16)));
@@ -122,6 +123,7 @@ public class UdpClient : MonoBehaviour
 
     public bool IsPlay = false;
 
+    //上一帧的角速度
     public int OldIndeX = -1;
     public int OldIndeY = -1;
     public int OldIndeZ = -1;
@@ -129,6 +131,8 @@ public class UdpClient : MonoBehaviour
     {
         return Math.Abs(num - target) <= 5000;
     }
+
+    //推箱子
     public void OnReshX(int index)
     {
         if (OldIndeX == -1)
