@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script_Rythm\Character.cs" />
     <Compile Include="Assets\Sokoban_2\Sript\MapCreator2.cs" />
     <Compile Include="Assets\Sokoban_2\Sript\player2.cs" />
+    <Compile Include="Assets\SceneSwitcher.cs" />
     <Compile Include="Assets\Script_Rythm\GameManager.cs" />
     <Compile Include="Assets\Script_Rythm\Effect.cs" />
     <Compile Include="Assets\KeyboardSimulator.cs" />
