@@ -196,12 +196,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map:
-  - '#########'
-  - '#_1_T__A#'
-  - '#__TTT2_#'
-  - '##_3_4###'
-  - '####__#__'
-  - ___####__
+  - '#######'
+  - '#__T_##'
+  - '#___1##'
+  - '#__2_A#'
+  - '#3#4#_#'
+  - '#T__TT#'
+  - '#######'
   wall: {fileID: 3861587803972528573, guid: b03a03cdf0e0b0e46a748450587cbd5b, type: 3}
   player: {fileID: 2071510095513336003, guid: 65d6a0078e68c764a9cb7f2f9591ffdc, type: 3}
   box1: {fileID: 3948231425973816894, guid: e1bfad0aceb3fc34a9dd38626bfb686e, type: 3}
@@ -211,7 +212,7 @@ MonoBehaviour:
   target: {fileID: 4063249516971059968, guid: 67dd43f74a82e9948997608801851cc2, type: 3}
   ground: {fileID: 2410432130260436982, guid: 482b15b794d7d2e47a0c7a1cb362f813, type: 3}
   left_top_x: -3
-  left_top_y: -4
+  left_top_y: -3
 --- !u!4 &880782311
 Transform:
   m_ObjectHideFlags: 0

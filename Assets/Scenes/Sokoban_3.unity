@@ -212,7 +212,7 @@ MonoBehaviour:
   box3: {fileID: 3227786158327586103, guid: 3c0b2d141d3767c4c9c450fb09a3a2bf, type: 3}
   box4: {fileID: 8732295683268451556, guid: d944d6f8529071e428a0dbf4af4bfcf7, type: 3}
   target: {fileID: 9140819094979297951, guid: f66519c85058fda4fadafcad1fd68bac, type: 3}
-  ground: {fileID: 6393210568607027775, guid: 4d8c52b74ae4efe40a8ed378181fa4a7, type: 3}
+  ground: {fileID: 2410432130260436982, guid: 482b15b794d7d2e47a0c7a1cb362f813, type: 3}
   left_top_x: -4
   left_top_y: -3
 --- !u!4 &1210407266

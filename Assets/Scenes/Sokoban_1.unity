@@ -338,7 +338,7 @@ MonoBehaviour:
   wall: {fileID: 1146808431997363800, guid: b55c8ec9e46a14a42852ff3b43aecf3f, type: 3}
   player: {fileID: 2071510095513336003, guid: 37991a6096cb55b4794179eed5f0daff, type: 3}
   box: {fileID: 1383740307373036897, guid: caf7daaa2e3873a44aca571f3dfb99b5, type: 3}
-  target: {fileID: 1357948906845057684, guid: 25e90bdb6fd6a244280579dcb6d96d8f, type: 3}
+  target: {fileID: 6485932701740939579, guid: 0ef292a73d7d33c44980c51943dbf2bd, type: 3}
   ground: {fileID: 30071579534194817, guid: 419a2aae950602d4fb49829aba76c340, type: 3}
   left_top_x: -3
   left_top_y: -3
