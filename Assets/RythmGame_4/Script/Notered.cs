@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.Windows;
 
-public class NoteObject : MonoBehaviour
+public class Notered : MonoBehaviour
 {
     public bool canBePress;
 
@@ -18,21 +16,21 @@ public class NoteObject : MonoBehaviour
     void Start()
     {
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //if (UdpClient.instance.IsPlay)
-        if (UnityEngine.Input.GetKeyDown(keyTopress) || Manager.instance.gameData.aY<=-3000) //
+        if (UnityEngine.Input.GetKeyDown(keyTopress) || (Manager.instance.gameData.aY <= -3000 && Manager.instance.gameData.light == 0))
         {
             if (canBePress)
             {
                 gameObject.SetActive(false);
                 //UdpClient.instance.IsPlay = false;
 
-                // Hitåˆ¤å®š
+                // HitÅÐ¶¨
                 if (transform.position.x <= -6.23f + perfectAdjust && transform.position.x >= -6.23f - perfectAdjust)
                 {
                     Debug.Log("Perfect Hit");
@@ -66,6 +64,4 @@ public class NoteObject : MonoBehaviour
             GameManager.instance.NoteMiss();
         }
     }
-   
-
 }

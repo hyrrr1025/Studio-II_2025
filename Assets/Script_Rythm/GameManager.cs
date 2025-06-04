@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
         if (!startPlaying)
         {
-            if(Input.anyKeyDown || Manager.instance.gameData.aY <= -7000)
+            if(Input.anyKeyDown || Manager.instance.gameData.aY <= -7000) // 
             {
                 startPlaying = true;
                 BS.hasStart = true;

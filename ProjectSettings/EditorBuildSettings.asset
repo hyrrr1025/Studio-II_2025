@@ -45,6 +45,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Plot/5.unity
     guid: 5204a45ae35500f43985cd06715dd613
   - enabled: 1
-    path: Assets/Scenes/RythmGame_5.unity
+    path: Assets/Scenes/RythmGame_4.unity
     guid: 9f4f7cb0877eb8b4c85c695aea22be69
   m_configObjects: {}
