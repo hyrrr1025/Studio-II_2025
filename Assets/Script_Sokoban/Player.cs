@@ -9,179 +9,135 @@ public class Player : MonoBehaviour
     // Map.
     private MapCreater myMap;
 
-    // Audo.
+    // Audio.
     private AudioSource audioSource;
 
-    // Animator.
-    //private Animator animator;
+    // 方向状态跟踪
+    private bool moveTriggered = false;
 
-    // 用来记录上次摁键后玩家的方向。
-    private int x_dir = 0;
-    private int y_dir = 0;
+    // 忽略传感器输入的帧数计数器
+    private int ignoreSensorFrames = 0;
+    private const int IGNORE_FRAME_COUNT = 55; // 忽略5帧
 
     private void Awake()
     {
         instance = this;
         myMap = FindObjectOfType<MapCreater>();
         audioSource = GetComponent<AudioSource>();
-        //animator = GetComponent<Animator>();
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    public void OnResh(int dx,int dy)
-    {
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            dx--;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            dx++;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            dy++;
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            dy--;
-        }
-
-        // 更新玩家的动画。
-        // Update player last movement.
-        if (dx != 0 || dy != 0)
-        {
-            // Player movement animation.
-            x_dir = dx;
-            y_dir = dy;
-        }
-
-        // 玩家下个位置。
-        // Next position.
-        int nx = dx + (int)transform.position.x;
-        int ny = dy + (int)transform.position.y;
-
-        // 判断下个位置是不是墙。
-        if (isWall(nx, ny)) return;
-
-        // 判断下个位置是不是盒子。
-        if (isBox(nx, ny))
-        {
-            // 得到玩家的下下个位置。
-            // Next next position.
-            int nnx = nx + dx;
-            int nny = ny + dy;
-
-            // 判断下下个位置是不是墙或者盒子。
-            if (isBox(nnx, nny) || isWall(nnx, nny)) return;
-
-            // 把盒子移到下个位置。
-            GameObject box = getBox(nx, ny);
-            box.transform.position = new Vector3(nnx, nny);
-
-            // 更新盒子在Map里面的结构。
-            myMap.getPosBoxMap().Remove(myMap.TwoDToOneD(nx, ny));
-            myMap.getPosBoxMap().Add(myMap.TwoDToOneD(nnx, nny), box);
-        }
-
-        // 把玩家移动到下个位置。
-        // Move player to next position.
-        transform.position = new Vector3(nx, ny);
-
-        // 如果玩家移动，播放音乐。
-        if (dx != 0 || dy != 0)
-        {
-            // Play foot step sound.
-            audioSource.Play();
-        }
-
-        // 判断是不是赢了。
-        checkIfWin();
-    }
-    // Update is called once per frame
     void Update()
     {
-        //animator.SetFloat("moveX", x_dir);
-        //animator.SetFloat("moveY", y_dir);
-
-        // delta x and delta y.
         int dx = 0;
         int dy = 0;
 
+        // 获取当前传感器值
+        float currentGY = Manager.instance.gameData.gY;
+        float currentGX = Manager.instance.gameData.gX;
+
+        // 键盘输入处理
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             dx--;
+            // 键盘移动时也忽略后续传感器输入
+            ignoreSensorFrames = IGNORE_FRAME_COUNT;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             dx++;
+            ignoreSensorFrames = IGNORE_FRAME_COUNT;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             dy++;
+            ignoreSensorFrames = IGNORE_FRAME_COUNT;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             dy--;
+            ignoreSensorFrames = IGNORE_FRAME_COUNT;
+        }
+        // 传感器输入处理 - 仅在移动未被触发且不在忽略帧时检测
+        else if (!moveTriggered && ignoreSensorFrames <= 0)
+        {
+            // 左右移动检测（Z轴变化）
+            if (currentGY <= -15500)
+            {
+                dx--;
+                moveTriggered = true;
+                // 检测到有效传感器输入，立即设置忽略帧
+                ignoreSensorFrames = IGNORE_FRAME_COUNT;
+            }
+            else if (currentGY >= 15500)
+            {
+                dx++;
+                moveTriggered = true;
+                ignoreSensorFrames = IGNORE_FRAME_COUNT;
+            }
+            // 上下移动检测（Y轴变化）
+            else if (currentGX <= -13000)
+            {
+                dy++;
+                moveTriggered = true;
+                ignoreSensorFrames = IGNORE_FRAME_COUNT;
+            }
+            else if (currentGX >= 13500)
+            {
+                dy--;
+                moveTriggered = true;
+                ignoreSensorFrames = IGNORE_FRAME_COUNT;
+            }
+        }
+        else
+        {
+            // 当传感器值回到中性区域时重置移动触发
+            if (currentGY < 2000 && currentGX < 2000)
+            {
+                moveTriggered = false;
+            }
         }
 
-        // 更新玩家的动画。
-        // Update player last movement.
+        // 如果检测到移动输入
         if (dx != 0 || dy != 0)
         {
-            // Player movement animation.
-            x_dir = dx;
-            y_dir = dy;
+            // 处理移动
+            HandleMovement(dx, dy);
         }
 
-        // 玩家下个位置。
-        // Next position.
-        int nx = dx + (int)transform.position.x;
-        int ny = dy + (int)transform.position.y;
+        // 更新忽略帧数计数器
+        if (ignoreSensorFrames > 0)
+        {
+            ignoreSensorFrames--;
+        }
+    }
+    void HandleMovement(int dx, int dy)
+    {
+        int nx = (int)transform.position.x + dx;
+        int ny = (int)transform.position.y + dy;
 
-        // 判断下个位置是不是墙。
+        // 碰撞检测
         if (isWall(nx, ny)) return;
 
-        // 判断下个位置是不是盒子。
+        // 处理箱子推动
         if (isBox(nx, ny))
         {
-            // 得到玩家的下下个位置。
-            // Next next position.
             int nnx = nx + dx;
             int nny = ny + dy;
 
-            // 判断下下个位置是不是墙或者盒子。
-            if (isBox(nnx, nny) || isWall(nnx, nny)) return;
+            if (isWall(nnx, nny) || isBox(nnx, nny)) return;
 
-            // 把盒子移到下个位置。
             GameObject box = getBox(nx, ny);
             box.transform.position = new Vector3(nnx, nny);
 
-            // 更新盒子在Map里面的结构。
             myMap.getPosBoxMap().Remove(myMap.TwoDToOneD(nx, ny));
             myMap.getPosBoxMap().Add(myMap.TwoDToOneD(nnx, nny), box);
         }
 
-        // 把玩家移动到下个位置。
-        // Move player to next position.
+        // 执行移动
         transform.position = new Vector3(nx, ny);
-
-        // 如果玩家移动，播放音乐。
-        if(dx != 0 || dy != 0) {
-            // Play foot step sound.
-            audioSource.Play();
-        }
-
-        // 判断是不是赢了。
+        audioSource.Play();
         checkIfWin();
     }
-
     bool isWall(int x, int y)
     {
         return myMap.getWallPosSet().Contains(myMap.TwoDToOneD(x, y));
@@ -209,6 +165,5 @@ public class Player : MonoBehaviour
             SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
             sceneLoader.LoadNextScene();
         }
-        
     }
 }

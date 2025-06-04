@@ -62,19 +62,21 @@
   <ItemGroup>
     <Compile Include="Assets\Script_Sokoban\SceneLoader.cs" />
     <Compile Include="Assets\Instruction\Instruction.cs" />
+    <Compile Include="Assets\SceneSwitcher_1.cs" />
     <Compile Include="Assets\Script_Rythm\Character.cs" />
     <Compile Include="Assets\Sokoban_2\Sript\MapCreator2.cs" />
+    <Compile Include="Assets\Client_UI.cs" />
     <Compile Include="Assets\Sokoban_2\Sript\player2.cs" />
     <Compile Include="Assets\SceneSwitcher.cs" />
     <Compile Include="Assets\Script_Rythm\GameManager.cs" />
     <Compile Include="Assets\Script_Rythm\Effect.cs" />
-    <Compile Include="Assets\KeyboardSimulator.cs" />
     <Compile Include="Assets\Script_Sokoban\Player.cs" />
     <Compile Include="Assets\Script_Rythm\BeatScroller.cs" />
-    <Compile Include="Assets\UdpClient.cs" />
     <Compile Include="Assets\Script_Rythm\NoteObject.cs" />
     <Compile Include="Assets\Script_Sokoban\MapCreator.cs" />
+    <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\Script_Rythm\ButtonController.cs" />
+    <Compile Include="Assets\Skip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

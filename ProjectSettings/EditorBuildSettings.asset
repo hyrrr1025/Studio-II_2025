@@ -6,15 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Plot/0.unity
+    guid: d236b6842f6c01d47be475d9dd1d5544
+  - enabled: 1
     path: Assets/Scenes/Plot/1.unity
     guid: c4357aff56390a34385dc0ea602667e5
   - enabled: 1
     path: Assets/Scenes/RythmGame_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Plot/2.unity
+    guid: c9fab70761949794783ce7abda405f15
+  - enabled: 1
     path: Assets/Scenes/Sokoban_1.unity
     guid: 9d40b1fc6cc788e489c7e0c919e823c6
   - enabled: 1
-    path: Assets/Scenes/Result_1.unity
-    guid: cc6498f2635c9ec4d9c9fb104ceec98f
+    path: Assets/Scenes/Plot/3.unity
+    guid: 69b25a8d6c2ae574880e690b4f503d19
+  - enabled: 1
+    path: Assets/Scenes/RythmGame_2.unity
+    guid: 918e363f408db1a44a37900eacdb03f3
+  - enabled: 1
+    path: Assets/Scenes/Sokoban_3.unity
+    guid: ddae9ef4e51b272438bae88e689a2071
+  - enabled: 1
+    path: Assets/Scenes/Plot/4.unity
+    guid: 80326d0d6dbd7334387cd228327e6d5d
+  - enabled: 1
+    path: Assets/Scenes/RythmGame_3.unity
+    guid: 079fedb067d186349b961534530841d8
+  - enabled: 1
+    path: Assets/Scenes/Sokoban_2.unity
+    guid: c13086ca0836ebd4b9fca067748225e4
+  - enabled: 1
+    path: Assets/Scenes/Sokoban_4.unity
+    guid: f86351cf3fd8d3c45bb27125be4eb205
+  - enabled: 1
+    path: Assets/Scenes/Plot/5.unity
+    guid: 5204a45ae35500f43985cd06715dd613
+  - enabled: 1
+    path: Assets/Scenes/RythmGame_5.unity
+    guid: 9f4f7cb0877eb8b4c85c695aea22be69
   m_configObjects: {}

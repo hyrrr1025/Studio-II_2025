@@ -23,7 +23,7 @@ public class ButtonController : MonoBehaviour
         //if (UdpClient.instance.IsPlay==true) { SR.sprite = pressedImage; }
         //if (UdpClient.instance.IsPlay == false) { SR.sprite = defaultImage; }
 
-        if (Input.GetKeyDown(keytoPress)){ SR.sprite = pressedImage; }
-        if (Input.GetKeyUp(keytoPress)) { SR.sprite = defaultImage; }
+        if (Input.GetKeyDown(keytoPress) || Manager.instance.gameData.aY <= -3000) { SR.sprite = pressedImage; }
+        if (Input.GetKeyUp(keytoPress) || Manager.instance.gameData.aY <= -3000) { SR.sprite = defaultImage; }
     }
 }

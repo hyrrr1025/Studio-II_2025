@@ -1764,9 +1764,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500535055}
-  - component: {fileID: 500535056}
+  - component: {fileID: 500535057}
   m_Layer: 0
-  m_Name: UDPClient
+  m_Name: TCPClient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1787,7 +1787,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &500535056
+--- !u!114 &500535057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1796,18 +1796,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 500535053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479a98a913bd69f4690c9c96389a370b, type: 3}
+  m_Script: {fileID: 11500000, guid: da013b9dbf9e0a6498e6972e17fba237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xX: 0
-  _yY: 0
-  _zZ: 0
-  _Button: 
-  _Light: 0
-  IsPlay: 0
-  OldIndeX: -1
-  OldIndeY: -1
-  OldIndeZ: -1
+  gameData:
+    aX: 0
+    aY: 0
+    aZ: 0
+    gX: 0
+    gY: 0
+    gZ: 0
+    light: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7018,6 +7017,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860998597}
+  - component: {fileID: 1860998598}
+  - component: {fileID: 1860998599}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -7043,6 +7044,34 @@ Transform:
   - {fileID: 844599097}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860998598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860998596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7c89aa84a76d14a889dd13f3f78a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 882261391}
+  requiredActiveTime: 5
+  switchKey: 274
+--- !u!114 &1860998599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860998596}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8604c57271e235428cb5b4558a4b7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: 2
 --- !u!1001 &1863323284
 PrefabInstance:
   m_ObjectHideFlags: 0

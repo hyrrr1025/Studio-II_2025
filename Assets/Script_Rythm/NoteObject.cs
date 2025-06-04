@@ -25,7 +25,7 @@ public class NoteObject : MonoBehaviour
     void Update()
     {
         //if (UdpClient.instance.IsPlay)
-        if (UnityEngine.Input.GetKeyDown(keyTopress))
+        if (UnityEngine.Input.GetKeyDown(keyTopress) || Manager.instance.gameData.aY<=-3000)
         {
             if (canBePress)
             {
